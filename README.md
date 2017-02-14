@@ -8,5 +8,5 @@ API Books:
 #Mardi 14 fevrier
 
 -okba : recherche sur les API
--fodil : recherche sur les API
+-fodil : recherche sur les API  - interruption par le test
 -linda: construction de l'interface - done
