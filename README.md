@@ -7,6 +7,6 @@ API Books:
 
 #Mardi 14 fevrier
 
--okba : recherche sur les API
+-okba : recherche sur les API - authentification sur API GoodReads - push la clé
 -fodil : recherche sur les API  - interruption par le test
 -linda: construction de l'interface - done
