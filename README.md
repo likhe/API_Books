@@ -1,5 +1,12 @@
 API Books:
 
-Okba: réalisation du mockup
-Fodil: recherche sur l'API GoodReads
-Linda: recherche sur l'API Google Books
+Vendredi 10 Fevrier
+
+Okba: réalisation du mockup - done
+Fodil: recherche sur l'API GoodReads - done
+Linda: recherche sur l'API Google Books - traduction de la documentation
+
+Mardi 14 fevrier
+
+okba et fodil : recherche sur les API
+linda: construction de l'interface
