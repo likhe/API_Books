@@ -3,7 +3,8 @@ API Books:
 #Vendredi 10 Fevrier
 
 - Okba: réalisation du mockup - done
-- Fodil: recherche sur l'API GoodReads - done -Linda: recherche sur l'API Google Books - traduction de la documentation
+- Fodil: recherche sur l'API GoodReads - done 
+- Linda: recherche sur l'API Google Books - traduction de la documentation
 
 #Mardi 14 fevrier
 
@@ -13,6 +14,3 @@ API Books:
 
 #Mercredi 15 février
 
-- okba:
-- fodil:
-- linda: 
