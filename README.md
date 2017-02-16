@@ -12,5 +12,9 @@ API Books:
 - fodil : recherche sur les API  - interruption par le test
 - linda: construction de l'interface - done
 
-#Mercredi 15 février
+#Jeudi 16 février
+
+-okba : requête rédigé en angularjs -topo sur la méthode- probleme dans la requete
+-fodil: recherche sur le probleme de la requete
+-linda: recherche sur le probleme de la requete - mockup améliore le result style
 
