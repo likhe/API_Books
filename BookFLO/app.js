@@ -1,16 +1,20 @@
 var myApp = angular.module('routing', []).config(function($sceDelegateProvider) {
-  $sceDelegateProvider.resourceUrlWhitelist([
-    // Allow same origin resource loads.
-    'self',
-    'https://www*.googleapis.com/**',
-    // Allow loading from our assets domain.  Notice the difference between * and **.
-    'http://srv*.assets.example.com/**'
-  ]);
+    $sceDelegateProvider.resourceUrlWhitelist([
+        // Allow same origin resource loads.
+        'self',
 
-  // The blacklist overrides the whitelist so the open redirect here is blocked.
-  $sceDelegateProvider.resourceUrlBlacklist([
-    'http://myapp.example.com/clickThru**'
-  ]);
+        'https://www*.googleapis.com/**',
+
+        'https://www*.goodreads.com/**',
+
+        // Allow loading from our assets domain.  Notice the difference between * and **.
+        'http://srv*.assets.example.com/**'
+    ]);
+
+    // The blacklist overrides the whitelist so the open redirect here is blocked.
+    $sceDelegateProvider.resourceUrlBlacklist([
+        'http://myapp.example.com/clickThru**'
+    ]);
 });
 
 myApp.controller('ExampleController', ['$scope', '$http', "$q", function($scope, $http, $q) {
@@ -21,7 +25,7 @@ myApp.controller('ExampleController', ['$scope', '$http', "$q", function($scope,
         url: 'https://www.googleapis.com/books/v1/volumes/s1gVAAAAYAAJ'
     }).then(function successCallback(response, data, status) {
         console.log("response = ", response);
-        console.log("data = ", data);
+        console.log("data = ", response.data);
     }, function errorCallback(response) {
         //add by ben
         console.log("response errorCallback = ", response);
