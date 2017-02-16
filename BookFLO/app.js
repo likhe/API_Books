@@ -17,7 +17,7 @@ myApp.controller('ExampleController', ['$scope', '$http', "$q", function($scope,
     console.log("salut");
 
     $http({
-        method: 'JSONP',
+        method: 'GET',
         url: 'https://www.googleapis.com/books/v1/volumes/s1gVAAAAYAAJ'
     }).then(function successCallback(response, data, status) {
         console.log("response = ", response);
