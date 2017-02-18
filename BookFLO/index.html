@@ -7,7 +7,7 @@
 </head>
 <link rel="stylesheet" href="style.css" media="screen" title="no title">
 
-<body ng-app="routing">
+<body>
     <header>
         <h1 id="test">Book FLO</h1>
     </header>
@@ -18,18 +18,17 @@
                 <button type="submit" name="button">Va chercher!</button>
             </fieldset>
         </form>
-
-<iframe src="https://www.goodreads.com/book/review_counts.json?isbns=0441172717" width="500px" height="400px"></iframe>
-
-        <div id="result" ng-controller="ExampleController">
+        <div id="result">
+          <div id="content"></div>
 
         </div>
     </main>
+
     <footer>
         <span>Credits | Simplonmars</span>
+        <script src="https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse"></script>
     </footer>
-    <script src="angular.js"></script>
-    <script src="app.js" charset="utf-8"></script>
+    <script type="application/javascript" src="app.js" charset="utf-8"></script>
 </body>
 
 </html>
