@@ -15,19 +15,19 @@
         <form onsubmit="return false;" class="" action="" method="get" ng-controller="Controller">
             <fieldset>
                 <input id="search" type="search" placeholder="Tu écris ici, ok?" name="name" value="">
-                <button id="button" type="submit" name="button">Va chercher!</button>
+                <button id="button" href="#/table" type="submit" name="button">Va chercher!</button>
             </fieldset>
         </form>
+        <div ng-view>
+          </div>
         <div id="result">
-          <div id="content"></div>
-
-        </div>
     </main>
 
     <footer>
         <span>Credits | Simplonmars</span>
     </footer>
     <script src="angular.js" charset="utf-8"></script>
+    <script src="angular-route.js" charset="utf-8"></script>
     <script type="application/javascript" src="app.js" charset="utf-8"></script>
 </body>
 

@@ -1,4 +1,4 @@
-var myApp = angular.module('routing', []).config(function($sceDelegateProvider) {
+var myApp = angular.module('routing', ['ngRoute']).config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
         // Allow same origin resource loads.
         'self',
@@ -13,20 +13,30 @@ var myApp = angular.module('routing', []).config(function($sceDelegateProvider) 
     ]);
 });
 
+
+myApp.config(['$routeProvider',
+    function($routeProvider) {
+
+        // Système de routage
+        $routeProvider
+        .when('/table', {
+            templateUrl: 'partials/table.html',
+            controller: 'tableCtrl'
+        })
+    }
+]);
+
+
+
+
 myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http, $q) {
     console.log("salut");
     let button = document.getElementById("button");
     let inputvalue = document.getElementById("search").value;
 
-
-
-
     button.onclick = function() {
         urlmaker();
     }
-
-
-
 
 
     function urlmaker() {
@@ -51,35 +61,37 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     };
 
 
-
     function getjson(jsonurl) {
+
+
+
         console.log("getjson");
         $http({
             method: 'GET',
             url: jsonurl
         }).then(function successCallback(response, data, status) {
+            let books = response.data.items;
             console.log("response = ", response);
             console.log("data = ", response.data);
-            console.log("item = ", response.data.items[0]);
+            console.log("books = ", books);
+            console.log("books 0 = ", response.data.items[0]);
+            console.log("books 0 volume info = ", response.data.items[0].volumeInfo);
+
+
+
 
             drawtheresult();
         }, function errorCallback(response) {
             console.log("error can't get the JSON file from the server", response);
-            document.getElementById("test").innerHTML = "Erreur lors de l'appel du json";
+            document.getElementById("result").innerHTML = "Erreur lors de l'appel du json";
             return false;
         });
     };
 
 
-
-
     function drawtheresult() {
         console.log("drawing the table with results");
-
     };
-
-
-
 
 
 
