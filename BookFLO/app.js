@@ -17,27 +17,51 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     console.log("salut");
     let button = document.getElementById("button");
     let inputvalue = document.getElementById("search").value;
-    let jsonurl = "https://www.googleapis.com/books/v1/volumes?q=harry+potter";
 
 
 
 
     button.onclick = function() {
-        getjson();
+        urlmaker();
     }
 
-    function getjson() {
-        console.log("getjson");
+
+
+
+
+    function urlmaker() {
+        let jsonurl = "https://www.googleapis.com/books/v1/volumes?q=";
+
         inputvalue = document.getElementById("search").value;
         console.log("inputvalue = ", inputvalue);
+        let newarray = [];
+        let formatedstring = "";
+
+        newarray = inputvalue.split(" ");
+        console.log("newarray :", newarray);
+
+        formatedstring = newarray.join('%20');
+        console.log("formatedstring :", formatedstring);
+
+        jsonurl += formatedstring;
+        console.log("json url write by the function :", jsonurl);
+
+        getjson(jsonurl);
+
+    };
 
 
+
+    function getjson(jsonurl) {
+        console.log("getjson");
         $http({
             method: 'GET',
             url: jsonurl
         }).then(function successCallback(response, data, status) {
             console.log("response = ", response);
             console.log("data = ", response.data);
+            console.log("item = ", response.data.items[0]);
+
             drawtheresult();
         }, function errorCallback(response) {
             console.log("error can't get the JSON file from the server", response);
@@ -49,15 +73,14 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
 
 
-
-
-
-
-
     function drawtheresult() {
         console.log("drawing the table with results");
 
     };
+
+
+
+
 
 
 
