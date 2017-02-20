@@ -30,7 +30,6 @@ myApp.config(['$routeProvider',
 
 
 myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http, $q) {
-    console.log("salut");
     let button = document.getElementById("button");
     let inputvalue = document.getElementById("search").value;
 
@@ -64,13 +63,13 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     function getjson(jsonurl) {
 
 
-
         console.log("getjson");
         $http({
             method: 'GET',
             url: jsonurl
         }).then(function successCallback(response, data, status) {
             let books = response.data.items;
+
             console.log("response = ", response);
             console.log("data = ", response.data);
             console.log("books = ", books);
