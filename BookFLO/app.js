@@ -1,4 +1,4 @@
-var myApp = angular.module('routing', ['ngRoute']).config(function($sceDelegateProvider) {
+var myApp = angular.module('routing', []).config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
         // Allow same origin resource loads.
         'self',
@@ -12,19 +12,6 @@ var myApp = angular.module('routing', ['ngRoute']).config(function($sceDelegateP
         'http://myapp.example.com/clickThru**'
     ]);
 });
-
-
-myApp.config(['$routeProvider',
-    function($routeProvider) {
-        // Système de routage
-        $routeProvider
-            .when('/table', {
-                templateUrl: 'partials/table.html',
-                controller: 'tableCtrl'
-            })
-    }
-]);
-
 
 myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http, $q, $state) {
     console.log("salut");
@@ -80,7 +67,6 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
             console.log("ISBN = ", books[0].volumeInfo.industryIdentifiers[0].identifier);
             console.log("editeur = ", books[0].volumeInfo.publisher);
             console.log("Date = ", books[0].volumeInfo.publishedDate);
-
 
             creatinglist();
         }, function errorCallback(response) {
