@@ -16,26 +16,25 @@ var myApp = angular.module('routing', ['ngRoute']).config(function($sceDelegateP
 
 myApp.config(['$routeProvider',
     function($routeProvider) {
-
         // Système de routage
         $routeProvider
-        .when('/table', {
-            templateUrl: 'partials/table.html',
-            controller: 'tableCtrl'
-        })
+            .when('/table', {
+                templateUrl: 'partials/table.html',
+                controller: 'tableCtrl'
+            })
     }
 ]);
 
 
-
-
-myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http, $q) {
+myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http, $q, $state) {
     console.log("salut");
     let button = document.getElementById("button");
     let inputvalue = document.getElementById("search").value;
 
     button.onclick = function() {
         urlmaker();
+
+
     }
 
 
@@ -76,11 +75,14 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
             console.log("books = ", books);
             console.log("books 0 = ", response.data.items[0]);
             console.log("books 0 volume info = ", response.data.items[0].volumeInfo);
+            console.log("title = ", books[0].volumeInfo.title);
+            console.log("auteurs = ", books[0].volumeInfo.authors[0]);
+            console.log("ISBN = ", books[0].volumeInfo.industryIdentifiers[0].identifier);
+            console.log("editeur = ", books[0].volumeInfo.publisher);
+            console.log("Date = ", books[0].volumeInfo.publishedDate);
 
 
-
-
-            drawtheresult();
+            creatinglist();
         }, function errorCallback(response) {
             console.log("error can't get the JSON file from the server", response);
             document.getElementById("result").innerHTML = "Erreur lors de l'appel du json";
@@ -89,8 +91,29 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     };
 
 
+
+    function creatinglist() {
+        console.log("making an array with info we needs");
+        let list = [];
+
+
+
+
+
+
+
+    };
+
+
+
+
     function drawtheresult() {
         console.log("drawing the table with results");
+
+
+
+
+
     };
 
 
@@ -99,3 +122,24 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
 
 }]);
+
+/*
+
+  app.views.redraw = function() {
+  const people = app.models.people.get();
+  const tbody = document.querySelector("tbody");
+  const trContainer = document.createDocumentFragment();
+
+  // Remove tbody contents
+  while (tbody.firstChild) {
+    tbody.removeChild(tbody.firstChild);
+  }
+  // Add new contents from people
+  for (let i = 0; i < people.length; i++) {
+    let tr = document.createElement("tr");
+    tr.innerHTML = `<td>${people[i].surname}</td><td>${people[i].firstname}</td><td>${people[i].age}</td><td>${people[i].height}</td>`;
+    trContainer.appendChild(tr);
+  }
+  tbody.appendChild(trContainer);
+};
+*/
