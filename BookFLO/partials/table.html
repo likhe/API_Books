@@ -1,10 +1,22 @@
+<p>{{ list.length }} élément(s)</p>
+
 <table>
-  <thead>
-    <th>Titre</th>
-    <th>Auteur</th>
-    <th>ISBN</th>
-    <th>Editeur</th>
-    <th>Date de parution</th>
-    <th>Style</th>
-  </thead>
+    <thead>
+        <th>Vignette</th>
+        <th>Titre</th>
+        <th>Auteur</th>
+        <th>ISBN</th>
+        <th>Editeur</th>
+        <th>Date de parution</th>
+        <th>Style</th>
+    </thead>
+    <tr ng-repeat="items in test track by $index">
+        <td>{{thumbnail}}</td>
+        <td>{{items.title}}</td>
+        <td>{{items.author}}</td>
+        <td>{{items.isbn}}</td>
+        <td>{{items.publisher}}</td>
+        <td>{{items.publisherDate}}</td>
+        <td>{{items.Style}}</td>
+    </tr>
 </table>

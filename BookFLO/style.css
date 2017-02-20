@@ -25,3 +25,11 @@ button {
     border-radius: 5px;
     border: 1px solid transparent;
 }
+table * {
+border: 1px solid black;
+
+}
+ table{
+margin: auto;
+
+ }

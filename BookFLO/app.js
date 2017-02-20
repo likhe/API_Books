@@ -17,11 +17,13 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     console.log("salut");
     let button = document.getElementById("button");
     let inputvalue = document.getElementById("search").value;
+    $scope.books;
+    $scope.test = [];
+
+
 
     button.onclick = function() {
         urlmaker();
-
-
     }
 
 
@@ -48,15 +50,12 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
 
     function getjson(jsonurl) {
-
-
-
         console.log("getjson");
         $http({
             method: 'GET',
             url: jsonurl
         }).then(function successCallback(response, data, status) {
-            let books = response.data.items;
+            books = response.data.items;
             console.log("response = ", response);
             console.log("data = ", response.data);
             console.log("books = ", books);
@@ -81,13 +80,18 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
     function creatinglist() {
         console.log("making an array with info we needs");
-        let list = [];
+        for (var i = 0; i < books.length; i++) {
+            $scope.test.push({title: books[i].volumeInfo.title,author: books[i].volumeInfo.authors[0], isbn: books[i].volumeInfo.industryIdentifiers[0].identifier, publisher: books[i].volumeInfo.publisher, publisherDate: books[i].volumeInfo.publishedDate})
+
+
+            console.log("test :", $scope.test, i);
+        }
 
 
 
 
 
-
+        drawtheresult();
     };
 
 
@@ -96,55 +100,10 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     function drawtheresult() {
         console.log("drawing the table with results");
 
-
-
+        /*
+              document.getElementsByClassName("returntop")[0].setAttribute("title", "Return to the top")*/
 
 
     };
 
-
-
-
-
-
 }]);
-
-  myApp.controller('TableCtrl', ['$scope', function($scope) {
-
-console.log("yo 2");
-
-  }]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-  app.views.redraw = function() {
-  const people = app.models.people.get();
-  const tbody = document.querySelector("tbody");
-  const trContainer = document.createDocumentFragment();
-
-  // Remove tbody contents
-  while (tbody.firstChild) {
-    tbody.removeChild(tbody.firstChild);
-  }
-  // Add new contents from people
-  for (let i = 0; i < people.length; i++) {
-    let tr = document.createElement("tr");
-    tr.innerHTML = `<td>${people[i].surname}</td><td>${people[i].firstname}</td><td>${people[i].age}</td><td>${people[i].height}</td>`;
-    trContainer.appendChild(tr);
-  }
-  tbody.appendChild(trContainer);
-};
-*/
