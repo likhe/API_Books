@@ -109,15 +109,11 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
 }]);
 
+  myApp.controller('TableCtrl', ['$scope', function($scope) {
 
+console.log("yo 2");
 
-var myApp = angular.module('bookflo', []);
-app.controller('customersCtrl', function($scope, $http) {
-    $http.get("customers.php").then(function (response) {
-        $scope.names = response.data.records;
-    });
-});
-
+  }]);
 
 
 
