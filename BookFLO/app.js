@@ -1,4 +1,4 @@
-var myApp = angular.module('routing', []).config(function($sceDelegateProvider) {
+var myApp = angular.module('bookflo', []).config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
         // Allow same origin resource loads.
         'self',
@@ -68,6 +68,9 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
             console.log("editeur = ", books[0].volumeInfo.publisher);
             console.log("Date = ", books[0].volumeInfo.publishedDate);
 
+
+
+
             creatinglist();
         }, function errorCallback(response) {
             console.log("error can't get the JSON file from the server", response);
@@ -76,12 +79,9 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         });
     };
 
-
-
     function creatinglist() {
         console.log("making an array with info we needs");
         let list = [];
-
 
 
 
@@ -108,6 +108,29 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
 
 }]);
+
+
+
+var myApp = angular.module('bookflo', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("customers.php").then(function (response) {
+        $scope.names = response.data.records;
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 

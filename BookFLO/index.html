@@ -7,7 +7,7 @@
 </head>
 <link rel="stylesheet" href="style.css" media="screen" title="no title">
 
-<body ng-app="routing">
+<body ng-app="bookflo">
     <header>
         <h1 id="test">Book FLO</h1>
     </header>
@@ -22,6 +22,12 @@
         </div>
         <div id="result">
             <div ng-include="partials/table.html"></div>
+
+            <div ng-controller="customersCtrl">
+              <div ng-include="'partials/table.html'"></div>
+            </div>
+
+
         </div>
     </main>
 
