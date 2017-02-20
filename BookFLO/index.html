@@ -1,26 +1,30 @@
-<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title></title>
-  </head>
-  <link rel="stylesheet" href="style.css" media="screen" title="no title">
-  <body>
+</head>
+<link rel="stylesheet" href="style.css" media="screen" title="no title">
+
+<body ng-app="routing">
     <header>
-      <h1>Book FLO</h1>
+        <h1 id="test">Book FLO</h1>
     </header>
     <main>
-      <form class="" action="index.html" method="post">
-        <fieldset>
-          <input type="search" placeholder="Tu écris ici, ok?" name="name" value="">
-          <button type="submit" name="button">Va chercher!</button>
-      </fieldset>
-      </form>
-      <div id="result">
-      </div>
+        <form class="" action="index.html" method="post">
+            <fieldset>
+                <input type="search" placeholder="Tu écris ici, ok?" name="name" value="">
+                <button type="submit" name="button">Va chercher!</button>
+            </fieldset>
+        </form>
+        <div id="result" ng-controller="ExampleController">
+
+        </div>
     </main>
     <footer>
-      <span>Credits | Simplonmars</span>
+        <span>Credits | Simplonmars</span>
     </footer>
-  </body>
+    <script src="angular.js"></script>
+    <script src="app.js" charset="utf-8"></script>
+
+</body>
 </html>
