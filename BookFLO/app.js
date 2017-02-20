@@ -18,7 +18,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     let button = document.getElementById("button");
     let inputvalue = document.getElementById("search").value;
     $scope.books;
-    $scope.test = [];
+    $scope.results = [];
 
 
 
@@ -81,10 +81,10 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     function creatinglist() {
         console.log("making an array with info we needs");
         for (var i = 0; i < books.length; i++) {
-            $scope.test.push({title: books[i].volumeInfo.title,author: books[i].volumeInfo.authors[0], isbn: books[i].volumeInfo.industryIdentifiers[0].identifier, publisher: books[i].volumeInfo.publisher, publisherDate: books[i].volumeInfo.publishedDate})
+            $scope.results.push({title: books[i].volumeInfo.title,author: books[i].volumeInfo.authors[0], isbn: books[i].volumeInfo.industryIdentifiers[0].identifier, publisher: books[i].volumeInfo.publisher, publisherDate: books[i].volumeInfo.publishedDate})
 
 
-            console.log("test :", $scope.test, i);
+            console.log("test :", $scope.results, i);
         }
 
 
