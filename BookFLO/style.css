@@ -1,27 +1,138 @@
-body {
-  margin: 0;
-  text-align: center;
-}
-header {
-  width: 100%;
-  height: 250px;
-}
-main {
-  height: 650px;
-}
-footer {
-  height: 250px;
-}
-form {
-    background-color: red;
+@font-face {
+    font-family: "Caviar Dreams";
+    src: url("fonts/CaviarDreams.ttf");
+    src: url("fonts/CaviarDreams_Bold.ttf");
+    src: url("fonts/CaviarDreams_BoldItalic.ttf");
+    src: url("fonts/CaviarDreams_BoldItalic.ttf");
 }
 
-fieldset {
-    border: 1px solid white;
+@font-face {
+    font-family: "Antique Book";
+    src: url("fonts/Antique Book.ttf");
+}
+
+@font-face {
+    font-family: "KG Fonts";
+    src: url("fonts/KGRiseUP.ttf");
+}
+
+@font-face {
+    font-family: "SL Books Arts";
+    src: url("fonts/SLBookArts.ttf");
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    height: 150px;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Antique Book";
+    font-size: 5em;
+    letter-spacing: .3em;
+}
+
+button, input {
+    padding: 10px;
+    height: 50px;
+    border: 1px solid transparent;
+}
+
+input {
+    background-color: aqua;
+    border-radius: 5px;
+    width: 350px;
+    margin-right: 0;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    z-index: 1;
 }
 
 button {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid transparent;
+    background-color: aqua;
+    background-image: url("search.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent;
+    margin-top: 0;
+    margin-left: -7px;
+    border-top: 3px solid aqua;
+    border-radius: 0 5px 5px 0;
+    z-index: -1;
+}
+input:hover {
+  border: 3px solid gray;
+  border-right: 6px solid gray;
+}
+button:hover {
+  border: 3px solid gray;
+}
+/**********the placeholder***************/
+
+::-webkit-input-placeholder {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+:-moz-placeholder {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+::-moz-placeholder {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+:-ms-input-placeholder {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+
+/****** the main********************/
+
+main {
+    height: 650px;
+    background-color: green;
+}
+
+footer {
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    height: 100px;
+    top: 800px;
+    bottom: 0;
 }
