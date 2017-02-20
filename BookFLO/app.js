@@ -13,8 +13,28 @@ var myApp = angular.module('bookflo', []).config(function($sceDelegateProvider) 
     ]);
 });
 
+<<<<<<< HEAD
 myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http, $q, $state) {
     console.log("salut");
+=======
+
+myApp.config(['$routeProvider',
+    function($routeProvider) {
+
+        // Système de routage
+        $routeProvider
+        .when('/table', {
+            templateUrl: 'partials/table.html',
+            controller: 'tableCtrl'
+        })
+    }
+]);
+
+
+
+
+myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http, $q) {
+>>>>>>> 0eb8b3a6791c0348b6b8bf5200d0353f3570517f
     let button = document.getElementById("button");
     let inputvalue = document.getElementById("search").value;
 
@@ -50,13 +70,13 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     function getjson(jsonurl) {
 
 
-
         console.log("getjson");
         $http({
             method: 'GET',
             url: jsonurl
         }).then(function successCallback(response, data, status) {
             let books = response.data.items;
+
             console.log("response = ", response);
             console.log("data = ", response.data);
             console.log("books = ", books);

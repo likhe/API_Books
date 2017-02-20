@@ -57,7 +57,7 @@ input {
 
 button {
     background-color: aqua;
-    background-image: url("search.png");
+    background-image: url("img/search.png");
     background-repeat: no-repeat;
     background-position: center;
     color: transparent;
