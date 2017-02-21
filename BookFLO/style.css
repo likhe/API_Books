@@ -15,16 +15,11 @@
     font-family: "KG Fonts";
     src: url("fonts/KGRiseUP.ttf");
 }
-<<<<<<< HEAD
-footer {
-  display: block;
-  height: 250px;
-=======
 
 @font-face {
     font-family: "SL Books Arts";
     src: url("fonts/SLBookArts.ttf");
->>>>>>> 124756e31c2ab3731df27bd81d19afd500fade3f
+
 }
 
 body {
@@ -49,7 +44,7 @@ button, input {
     height: 50px;
     border: 1px solid transparent;
 }
-<<<<<<< HEAD
+
 table * {
 border: 1px solid black;
 
@@ -58,7 +53,7 @@ border: 1px solid black;
 margin: auto;
 
  }
-=======
+
 
 input {
     background-color: aqua;
@@ -157,4 +152,3 @@ footer {
 .credits {
   margin-top: 50px;
 }
->>>>>>> 124756e31c2ab3731df27bd81d19afd500fade3f
