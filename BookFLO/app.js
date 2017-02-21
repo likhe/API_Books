@@ -34,6 +34,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         console.log("inputvalue = ", inputvalue);
         let newarray = [];
         let formatedstring = "";
+        let key = "&key=AIzaSyCsQR7F04zJVfUL4trC4XFh7tEwLwjt4DY"
 
         newarray = inputvalue.split(" ");
         console.log("newarray :", newarray);
@@ -43,7 +44,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
         jsonurl += formatedstring;
         console.log("json url write by the function :", jsonurl);
-
+&key=yourAPIKey
         getjson(jsonurl);
 
     };
@@ -66,6 +67,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
             console.log("ISBN = ", books[0].volumeInfo.industryIdentifiers[0].identifier);
             console.log("editeur = ", books[0].volumeInfo.publisher);
             console.log("Date = ", books[0].volumeInfo.publishedDate);
+            console.log("smallThumbnail = ", books[0].volumeInfo.imageLinks.smallThumbnail);
 
 
 
@@ -81,7 +83,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     function creatinglist() {
         console.log("making an array with info we needs");
         for (var i = 0; i < books.length; i++) {
-            $scope.results.push({title: books[i].volumeInfo.title,author: books[i].volumeInfo.authors[0], isbn: books[i].volumeInfo.industryIdentifiers[0].identifier, publisher: books[i].volumeInfo.publisher, publisherDate: books[i].volumeInfo.publishedDate})
+            $scope.results.push({smallThumbnail:books[i].volumeInfo.imageLinks.smallThumbnail, title: books[i].volumeInfo.title,author: books[i].volumeInfo.authors[0], isbn: books[i].volumeInfo.industryIdentifiers[0].identifier, publisher: books[i].volumeInfo.publisher, publisherDate: books[i].volumeInfo.publishedDate})
 
 
             console.log("test :", $scope.results, i);

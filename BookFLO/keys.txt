@@ -1,2 +1,7 @@
 goodreads: key: vWpLK9nsq7was0ZRwN5MxQ
 goodreads: secret: NuM8GJH1KjJ9i5oZ2NJQvydSw1vMelzJG9AD9NhiC4
+
+google: AIzaSyCsQR7F04zJVfUL4trC4XFh7tEwLwjt4DY
+
+read it to use better the api (search by : title, author, isbn, .....)
+https://developers.google.com/books/docs/v1/using
