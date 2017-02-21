@@ -33,6 +33,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         let args = ""; // arguments in case we want a more specific search
         let newarray = [];
         let formatedstring = "";
+        let maxresult = "&maxResults=20"
 
         inputvalue = document.getElementById("search").value;
         console.log("inputvalue = ", inputvalue);
@@ -43,7 +44,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         formatedstring = newarray.join('%20'); //join all index values in a string and put a space char between them
         console.log("formatedstring :", formatedstring);
 
-        jsonurl += formatedstring;
+        jsonurl += formatedstring + maxresult + key;
         console.log("json url write by the function :", jsonurl); // url done
 
         getjson(jsonurl); //sending the formatted url to the getjson function
@@ -70,7 +71,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
             console.log("Date = ", books[0].volumeInfo.publishedDate);
             console.log("smallThumbnail = ", books[0].volumeInfo.imageLinks.smallThumbnail);
 
-            validitycheck();
+            creatinglist();
         }, function errorCallback(response) {
             console.log("error can't get the JSON file from the server", response);
             document.getElementById("result").innerHTML = "Erreur lors de l'appel du json";
@@ -78,60 +79,35 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         });
     };
 
-
-    function validitycheck() {
-        console.log("validity check started");
-        for (var i = 0; i < books.length; i++) {
-
-          let smallThumbnail = books[i].volumeInfo.imageLinks.smallThumbnail,
-          title = books[i].volumeInfo.title,
-          author = books[i].volumeInfo.authors,
-          isbn = books[i].volumeInfo.industryIdentifiers[0],
-          publisher = books[i].volumeInfo.publisher,
-          publisherDate = books[i].volumeInfo.publishedDate;
-
-
-            if (smallThumbnail == undefined) {
-                books[i].volumeInfo.imageLinks.smallThumbnail = "N/C";
-            }
-            if (title == undefined) {
-                books[i].volumeInfo.title = "N/C";
-            }
-            if (author == undefined) {
-                books[i].volumeInfo.authors = "N/C";
-            }
-            if (isbn == undefined) {
-                books[i].volumeInfo.industryIdentifiers[0].identifier = "N/C";
-            }
-            if (publisher == undefined) {
-                books[i].volumeInfo.publisher = "N/C";
-            }
-            if (publisherDate == undefined) {
-                books[i].volumeInfo.publishedDate = "N/C";
-            } else {
-                console.log("check done");
-            }
-        }
-        creatinglist();
-    }
-
-
-
-
     function creatinglist() {
         $scope.results = []; // array reset
-
+        let image, titre, auteur, identifieur, editeur, date;
         console.log("making an array with info we needs");
         for (var i = 0; i < books.length; i++) {
+            let errocounter = 0;
+
+            books[i].volumeInfo.imageLinks == undefined ? (errocounter++, image = "N/C") : image = books[i].volumeInfo.imageLinks.smallThumbnail;
+
+            books[i].volumeInfo.title == undefined ? (errocounter++, titre = "N/C") : titre = books[i].volumeInfo.title;
+
+            books[i].volumeInfo.authors == undefined ? (errocounter++, auteur = "N/C") : auteur = books[i].volumeInfo.authors[0];
+
+            books[i].volumeInfo.industryIdentifiers[0].identifier == undefined ? identifieur = "N/C" : books[i].volumeInfo.industryIdentifiers[0].identifier;
+
+            books[i].volumeInfo.publisher == undefined ? (errocounter++, editeur = "N/C") : editeur = books[i].volumeInfo.publisher;
+
+            books[i].volumeInfo.publishedDate == undefined ? (errocounter++, date = "N/C") : date = books[i].volumeInfo.publishedDate
+
+            console.log("check done", errocounter, "error");
 
 
             $scope.results.push({
-                smallThumbnail: books[i].volumeInfo.imageLinks.smallThumbnail,
-                title: books[i].volumeInfo.title,
-                author: books[i].volumeInfo.authors[0],
-                isbn: books[i].volumeInfo.industryIdentifiers[0].identifier,
-                publisher: books[i].volumeInfo.publisher,
-                publisherDate: books[i].volumeInfo.publishedDate
+                smallThumbnail: image,
+                title: titre,
+                author: auteur,
+                isbn: identifieur,
+                publisher: editeur,
+                publisherDate: date
             })
 
 
