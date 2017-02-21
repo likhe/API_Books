@@ -10,6 +10,7 @@ main {
   height: 650px;
 }
 footer {
+  display: block;
   height: 250px;
 }
 form {
