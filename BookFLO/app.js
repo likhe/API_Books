@@ -2,6 +2,7 @@ var myApp = angular.module('bookflo', []).config(function($sceDelegateProvider) 
     $sceDelegateProvider.resourceUrlWhitelist([
         // Allow same origin resource loads.
         'self',
+
         'https://www*.googleapis.com/**',
         // Allow loading from our assets domain.  Notice the difference between * and **.
         'http://srv*.assets.example.com/**'
@@ -17,10 +18,11 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     console.log("salut");
     let button = document.getElementById("button");
     let inputvalue = document.getElementById("search").value;
+    let resultnumbers = 20;
+
+
     $scope.books;
     $scope.results = [];
-
-
 
     button.onclick = function() {
         urlmaker();
@@ -28,12 +30,24 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
 
     function urlmaker() {
+
+        let titlecheckbox = document.querySelector('input[name="titlecheckbox"]').checked;
+        let authorcheckbox = document.querySelector('input[name="authorcheckbox"]').checked;
+        let publisher = document.querySelector('input[name="publisher"]').checked;
+        let checkboxall = document.querySelector('input[name="checkboxall"]').checked;
+
+
+
         let key = "&key=AIzaSyCsQR7F04zJVfUL4trC4XFh7tEwLwjt4DY" // google api key for monitoring
         let jsonurl = "https://www.googleapis.com/books/v1/volumes?q="; // url base
         let args = ""; // arguments in case we want a more specific search
         let newarray = [];
         let formatedstring = "";
-        let maxresult = "&maxResults=20"
+        let maxresult = "&maxResults=" + resultnumbers;
+
+
+        console.log("checkbox titre :", titlecheckbox);
+
 
         inputvalue = document.getElementById("search").value;
         console.log("inputvalue = ", inputvalue);
@@ -50,7 +64,6 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         getjson(jsonurl); //sending the formatted url to the getjson function
 
     };
-
 
     function getjson(jsonurl) {
         console.log("getjson");
@@ -92,7 +105,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
             books[i].volumeInfo.authors == undefined ? (errocounter++, auteur = "N/C") : auteur = books[i].volumeInfo.authors[0];
 
-            books[i].volumeInfo.industryIdentifiers[0].identifier == undefined ? identifieur = "N/C" : books[i].volumeInfo.industryIdentifiers[0].identifier;
+            books[i].volumeInfo.industryIdentifiers[0].identifier == undefined ? (errocounter++, identifieur = "N/C") : identifieur = books[i].volumeInfo.industryIdentifiers[0].identifier;
 
             books[i].volumeInfo.publisher == undefined ? (errocounter++, editeur = "N/C") : editeur = books[i].volumeInfo.publisher;
 

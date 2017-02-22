@@ -21,6 +21,15 @@ body {
     font-family: "Caviar Dreams";
 }
 
+.advancedsearch {
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    display: block;
+}
+
 .container {
     display: flex;
     min-height: 100vh;
@@ -38,16 +47,21 @@ h1 {
     font-size: 5em;
     letter-spacing: .3em;
 }
+
 form {
-  padding-bottom: 50px;
+    position: relative;
+    padding-bottom: 50px;
 }
+
 button, input {
     padding: 10px;
     height: 50px;
     border: 1px solid transparent;
 }
 
+
 /****the search input****************/
+
 input {
     background-color: aqua;
     border-radius: 5px;
@@ -58,6 +72,7 @@ input {
     color: white;
     font-family: "Caviar Dreams", Garamond;
 }
+
 input:hover {
     border: 1px solid gray;
     border-right: 3px solid gray;
@@ -67,22 +82,26 @@ input:focus {
     border: 1px solid transparent;
     border-right: 3px solid transparent;
 }
-input:autofill {
-  background-color: aqua;
 
+input:autofill {
+    background-color: aqua;
 }
+
 input:-webkit-autofill {
-  background-color: aqua;
+    background-color: aqua;
 }
 
 input:-moz-autofill {
-  background-color: aqua;
+    background-color: aqua;
 }
+
 input[type="search" i] {
     text-align: center;
 }
 
+
 /***********the button****************/
+
 button {
     background-color: aqua;
     background-image: url("img/search.png");
@@ -175,12 +194,17 @@ main {
     order: 2;
 }
 
+
 /**********the table******************/
- table * {
-  	border: 1px solid black;		  
-	margin: auto;
-    }
+
+table * {
+    border: 1px solid black;
+    margin: auto;
+}
+
+
 /**********footer*******************/
+
 footer {
     height: 15vh;
     flex-shrink: 1;
