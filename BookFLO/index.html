@@ -6,27 +6,28 @@
     <title>Book FLO</title>
 </head>
 <link rel="stylesheet" href="style.css" media="screen" title="no title">
-
+<link rel="shortcut icon" href="img/books.ico">
 <body ng-app="bookflo" ng-controller="Controller">
-    <header>
-        <h1>Book FLO</h1>
-    </header>
-    <main>
-        <form onsubmit="return false;" class="" action="" method="get">
-            <input id="search" type="search" placeholder="Mots-clés" name="name" value="">
-            <button id="button" href="" type="submit" name="button">Recherche</button>
+    <div class="container">
 
-        </form>
-        <div id="result">
+        <header>
+            <h1>Book FLO</h1>
+        </header>
+        <main>
+            <form onsubmit="return false;" class="" action="" method="get">
+                <input id="search" type="search" placeholder="Mots-clés" name="name" value="">
+                <button id="button" href="" type="submit" name="button">Recherche</button>
 
-                  <div id="table" ng-include="'partials/table.html'"></div>
-
+            </form>
+            <div id="result">
+                <div id="table" ng-include="'partials/table.html'"></div>
             </div>
-    </main>
+        </main>
 
-    <footer>
-        <p class="credits">Credits | Simplonmars</p>
-    </footer>
+        <footer>
+            <p class="credits"><sup>&copy&nbsp;</sup><time>2017</time> Simplonmars &nbsp;|&nbsp; Projet Data Plug &nbsp;|&nbsp; Groupe: Fodil Azli + Okba Hamidi + Linda Khelifi &nbsp;</p>
+        </footer>
+    </div>
     <script src="angular.js" charset="utf-8"></script>
     <script src="angular-route.js" charset="utf-8"></script>
     <script type="application/javascript" src="app.js" charset="utf-8"></script>
