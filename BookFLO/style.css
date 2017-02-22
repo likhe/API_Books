@@ -21,6 +21,15 @@ body {
     font-family: "Caviar Dreams";
 }
 
+.advancedsearch {
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    display: block;
+}
+
 .container {
     display: flex;
     min-height: 100vh;
@@ -40,6 +49,10 @@ h1 {
 }
 
 form {
+<<<<<<< HEAD
+=======
+    position: relative;
+>>>>>>> f95ca74ccc5247e0643e525049e229e6dded950f
     padding-bottom: 50px;
 }
 
@@ -190,6 +203,7 @@ main {
 table * {
     border: 1px solid black;
     margin: auto;
+<<<<<<< HEAD
     text-align: center;
 }
 
@@ -198,6 +212,11 @@ table * {
 th {
 }
 
+=======
+}
+
+
+>>>>>>> f95ca74ccc5247e0643e525049e229e6dded950f
 /**********footer*******************/
 
 footer {
