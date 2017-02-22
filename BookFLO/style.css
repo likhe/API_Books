@@ -38,16 +38,20 @@ h1 {
     font-size: 5em;
     letter-spacing: .3em;
 }
+
 form {
-  padding-bottom: 50px;
+    padding-bottom: 50px;
 }
+
 button, input {
     padding: 10px;
     height: 50px;
     border: 1px solid transparent;
 }
 
+
 /****the search input****************/
+
 input {
     background-color: aqua;
     border-radius: 5px;
@@ -58,6 +62,7 @@ input {
     color: white;
     font-family: "Caviar Dreams", Garamond;
 }
+
 input:hover {
     border: 1px solid gray;
     border-right: 3px solid gray;
@@ -67,28 +72,32 @@ input:focus {
     border: 1px solid transparent;
     border-right: 3px solid transparent;
 }
-input:autofill {
-  background-color: aqua;
 
+input:autofill {
+    background-color: aqua;
 }
+
 input:-webkit-autofill {
-  background-color: aqua;
+    background-color: aqua;
 }
 
 input:-moz-autofill {
-  background-color: aqua;
+    background-color: aqua;
 }
+
 input[type="search" i] {
     text-align: center;
 }
 
+
 /***********the button****************/
+
 button {
     background-color: aqua;
     background-image: url("img/search.png");
     background-repeat: no-repeat;
     background-position: center;
-    color: transparent;
+    color: aqua;
     margin-top: 0;
     margin-left: -8px;
     border-top: 3px solid aqua;
@@ -175,12 +184,22 @@ main {
     order: 2;
 }
 
+
 /**********the table******************/
- table * {
-  	border: 1px solid black;		  
-	margin: auto;
-    }
+
+table * {
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+}
+
+
+/******inside the table********/
+th {
+}
+
 /**********footer*******************/
+
 footer {
     height: 15vh;
     flex-shrink: 1;
