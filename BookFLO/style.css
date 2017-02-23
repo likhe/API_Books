@@ -216,7 +216,12 @@ button:hover {
 
 #table {
     display: none;
-    
+    background-color: rgba(244, 244, 244, 0.3);
+}
+
+td a {
+    color: black;
+    text-decoration: none;
 }
 
 button:focus {
@@ -286,9 +291,8 @@ main {
     flex-grow: 3;
     order: 3;
     background-image: url('img/page.jpg');
-    background-attachment:fixed;
+    background-attachment: fixed;
     background-size: 100%;
-    background-color: #f4f4f4;
 }
 
 main, footer {
