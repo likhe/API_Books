@@ -2,47 +2,48 @@
 <html>
 
 <head>
-    <meta charset="utf-8"></meta>
+    <meta charset="utf-8">
     <title>Book FLO</title>
-    <link rel="stylesheet" href="style.css" media="screen" title="no title"></link>
-    <link rel="shortcut icon" href="img/books.ico"></link>
 </head>
+<link rel="stylesheet" href="style.css" media="screen" title="no title">
+<link rel="shortcut icon" href="img/books.ico">
 
 <body ng-app="bookflo" ng-controller="Controller">
     <div class="container">
+
         <header>
             <h1>Book FLO</h1>
         </header>
-        <main>
+        <nav>
             <form onsubmit="return false;" name="myform" class="" action="" method="get">
-              <details id="advancedsearch" value>
-                <summary>recherche avancée</summary>
-                <div class="advancedsearchdivcontainer">
-                  <div id="searchby">
-                    <p>recherche par :</p>
-                    <strong>Titre:  <input id="titlecheckbox" name="titlecheckbox" type="checkbox"></input></strong>
-                    <strong>Auteur:  <input name="authorcheckbox" type="checkbox"></input></strong>
-                    <strong>Editeur:  <input name="publisher" type="checkbox"></input></strong>
-                    <strong>tous:  <input name="checkboxall" type="checkbox"></input> </strong>
-                  </div>
-                  <div class="maxresult">
-                    <p>Nombre maximum de résultats :</p>
-                    <select id="maxresults">
-                      <option value="5">5</option>
-                      <option value="10">10</option>
-                      <option value="15">15</option>
-                      <option value="20">20</option>
-                      <option value="30">30</option>
-                      <option value="40">40</option>
-                    </select>
-                  </div>
-                </div>
-              </details>
+                    <details open class="advancedsearch" value>
+                        <summary>recherche avancée</summary>
+                        <div class="searchby">
+                            <span><label>Titre:<input id="titlecheckbox" ng-checked="master" name="titlecheckbox" type="checkbox" onchange="checkbox()"/></label></span><br>
+                            <span><label>Auteur:<input id="authorcheckbox" name="authorcheckbox" ng-checked="master" type="checkbox" onchange="checkbox()"/></label></span><br>
+                            <span><label>Editeur:<input id="editorcheckbox" name="publisher" ng-checked="master" type="checkbox"/ onchange="checkbox()"></label></span><br>
+                            <span><label>Tous:<input id="allcheckbox" name="checkboxall" ng-model="master" type="checkbox"/> </label></span><br>
+                        </div>
+                        <div class="maxresult">
+                            <span>Résultats par page :</span>
+                            <select>
+                         <option value="5">5</option>
+                         <option value="10">10</option>
+                         <option value="15">15</option>
+                         <option value="20">20</option>
+                         <option value="30">30</option>
+                         <option value="40">40</option>
+                       </select>
+                        </div>
+                    </details>
+                <nav>
+                    <input id="search" type="search" placeholder="Mots-clés" name="name" value="" />
+                    <button id="button" href="" type="submit" name="button">Recherche</button>
+                </nav>
 
-
-                <input id="search" type="search" placeholder="Mots-clés" name="name" value=""></input>
-                <button id="button" href="" type="submit" name="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
             </form>
+        </nav>
+        <main>
             <div id="result">
                 <div id="table" ng-include="'partials/table.html'"></div>
             </div>
