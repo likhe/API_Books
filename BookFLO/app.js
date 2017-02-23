@@ -39,7 +39,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     $scope.results = [];
 
     function checkboxlistener() {
-      console.log(maxresultsinputvalue);
+        console.log(maxresultsinputvalue);
         checkboxsum = 0;
         if (titlecheckbox.checked == true) {
             checkboxsum++;
@@ -68,20 +68,22 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
 
     function urlmaker() {
-      maxresultsinput = document.getElementById("maxresults").selectedIndex;
-      maxresultsinputvalue = document.getElementsByTagName("option")[maxresultsinput].value
-      resultnumbers = maxresultsinputvalue;
+      inputvalue = document.getElementById("search").value;
+      console.log("inputvalue = ", inputvalue);
+        maxresultsinput = document.getElementById("maxresults").selectedIndex;
+        maxresultsinputvalue = document.getElementsByTagName("option")[maxresultsinput].value
+        resultnumbers = maxresultsinputvalue;
         args = "";
         if (titlecheckbox.checked == true) {
-            args += "intitle:"
+            args += "+intitle:" + inputvalue;
         }
         if (authorcheckbox.checked == true) {
-            args += "inauthor:"
+            args += "+inauthor:" + inputvalue;
         }
         if (publisher.checked == true) {
-            args += "inpublisher:"
+            args += "+inpublisher:" + inputvalue;
         }
-        console.log(checkboxsum);
+        console.log(args);
 
 
         let key = "&key=AIzaSyCsQR7F04zJVfUL4trC4XFh7tEwLwjt4DY" // google api key for monitoring
@@ -92,14 +94,8 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
 
 
-
-
-
         console.log("checkbox titre :", titlecheckbox);
 
-
-        inputvalue = document.getElementById("search").value;
-        console.log("inputvalue = ", inputvalue);
 
         newarray = inputvalue.split(" ");
         console.log("newarray :", newarray);
@@ -107,7 +103,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         formatedstring = newarray.join('%20'); //join all index values in a string and put a space char between them
         console.log("formatedstring :", formatedstring);
 
-        jsonurl += formatedstring + maxresult + key;
+        jsonurl += formatedstring + args + maxresult + key;
         console.log("json url write by the function :", jsonurl); // url done
 
         getjson(jsonurl); //sending the formatted url to the getjson function
@@ -122,19 +118,19 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         }).then(function successCallback(response, data, status) {
             books = response.data.items;
             args = "";
-            console.log("response = ", response);
+  /*          console.log("response = ", response);
             console.log("data = ", response.data);
             console.log("books = ", books);
             console.log("books 0 = ", response.data.items[0]);
             console.log("books 0 volume info = ", response.data.items[0].volumeInfo);
             console.log("title = ", books[0].volumeInfo.title);
-            console.log("auteurs = ", books[0].volumeInfo.authors[0]);
+            console.log("auteurs = ", books[0].volumeInfo.authors);
             console.log("ISBN = ", books[0].volumeInfo.industryIdentifiers[0].identifier);
             console.log("editeur = ", books[0].volumeInfo.publisher);
             console.log("Date = ", books[0].volumeInfo.publishedDate);
             console.log("smallThumbnail = ", books[0].volumeInfo.imageLinks.smallThumbnail);
             console.log("previewLink = ", books[0].volumeInfo.previewLink);
-            console.log("categories = ", books[0].volumeInfo.categories[0]);
+            console.log("categories = ", books[0].volumeInfo.categories[0]); */
             creatinglist();
         }, function errorCallback(response) {
             args = "";
