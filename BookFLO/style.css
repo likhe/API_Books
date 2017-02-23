@@ -21,13 +21,29 @@ body {
     font-family: "Caviar Dreams";
 }
 
-.advancedsearch {
-    width: 250px;
-    height: 100px;
+#advancedsearch {
+    right: 0px;
     position: absolute;
     top: 0;
-    right: 20px;
     display: block;
+}
+.advancedsearchdivcontainer *{
+max-width: 100%;
+
+}
+.advancedsearchdivcontainer {
+  background-color: rgba(100, 100, 100, 0.8);
+  border-radius: 6px;
+  position: relative;
+    width: 400px;
+    height: 50px;
+}
+#searchby {
+  height: 40px;
+}
+.maxresult{
+  position: absolute;
+  right: 0;
 }
 
 .container {
@@ -49,10 +65,7 @@ h1 {
 }
 
 form {
-<<<<<<< HEAD
-=======
     position: relative;
->>>>>>> f95ca74ccc5247e0643e525049e229e6dded950f
     padding-bottom: 50px;
 }
 
@@ -203,20 +216,19 @@ main {
 table * {
     border: 1px solid black;
     margin: auto;
-<<<<<<< HEAD
     text-align: center;
 }
 
 
 /******inside the table********/
-th {
+
+#previewlink {
+    border: 0px solid black;
+    color: black;
+    text-decoration: none;
 }
 
-=======
-}
 
-
->>>>>>> f95ca74ccc5247e0643e525049e229e6dded950f
 /**********footer*******************/
 
 footer {
