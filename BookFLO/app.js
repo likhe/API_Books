@@ -155,6 +155,8 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
 
         }
+
+        document.getElementById("table").style.display = "block"; 
         /*    drawtheresult(); not needed for now maybe in a future implementation  */
 
     };
