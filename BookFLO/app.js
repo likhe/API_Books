@@ -90,7 +90,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         let jsonurl = "https://www.googleapis.com/books/v1/volumes?q="; // url base
         let newarray = [];
         let formatedstring = "";
-        let maxresult = "&maxResults=" + resultnumbers;
+        let maxresult = "&maxResults=" + 20;
 
 
 

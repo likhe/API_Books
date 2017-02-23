@@ -116,7 +116,7 @@ summary, .advancedsearch {
 .maxresult {
   margin-top: 10px;
 }
-.maxresult,span {
+.maxresult, span {
   text-align: left;
 }
 select {
@@ -268,7 +268,7 @@ main {
     opacity: .5;
 }
 
-main,footer {
+main, footer {
   margin-right: -20px;
 }
 
