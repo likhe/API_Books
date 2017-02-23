@@ -54,8 +54,11 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         if (checkboxsum == 3) {
             checkboxall.checked = true;
             checkboxsum = 3
-        } else if (checkboxall.checked == false) {
-            allchecked = 0;
+        } else if (checkboxsum < 3) {
+            checkboxall.checked = false
+        }
+        else if (checkboxall.checked == true) {
+            checkboxsum = 3;
         }
     }
 
