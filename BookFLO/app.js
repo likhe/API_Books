@@ -18,10 +18,10 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
     console.log("salut");
     let button = document.getElementById("button");
     let inputvalue = document.getElementById("search").value;
-    let resultnumbers = 20;
-    let args = ""; // arguments in case we want a more specific search
     let maxresultsinput = document.getElementById("maxresults").selectedIndex;
     let maxresultsinputvalue = document.getElementsByTagName("option")[maxresultsinput].value
+    let resultnumbers = maxresultsinputvalue;
+    let args = ""; // arguments in case we want a more specific search
 
     var titlecheckbox = document.querySelector('input[name="titlecheckbox"]');
     let authorcheckbox = document.querySelector('input[name="authorcheckbox"]');
@@ -90,7 +90,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         let jsonurl = "https://www.googleapis.com/books/v1/volumes?q="; // url base
         let newarray = [];
         let formatedstring = "";
-        let maxresult = "&maxResults=" + 20;
+        let maxresult = "&maxResults=" + resultnumbers;
 
 
 
@@ -118,7 +118,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         }).then(function successCallback(response, data, status) {
             books = response.data.items;
             args = "";
-  /*          console.log("response = ", response);
+  /*        console.log("response = ", response);
             console.log("data = ", response.data);
             console.log("books = ", books);
             console.log("books 0 = ", response.data.items[0]);
@@ -130,7 +130,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
             console.log("Date = ", books[0].volumeInfo.publishedDate);
             console.log("smallThumbnail = ", books[0].volumeInfo.imageLinks.smallThumbnail);
             console.log("previewLink = ", books[0].volumeInfo.previewLink);
-            console.log("categories = ", books[0].volumeInfo.categories[0]); */
+            console.log("categories = ", books[0].volumeInfo.categories[0]);*/
             creatinglist();
         }, function errorCallback(response) {
             args = "";

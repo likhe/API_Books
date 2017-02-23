@@ -1,8 +1,6 @@
-<link rel="stylesheet" href="bootstrap.css" media="screen" title="no title"></link>
-
 <p>{{ results.length }} élément(s)</p>
 
-<table class="table table-hover">
+<table>
     <thead>
         <th>Vignette</th>
         <th>Titre</th>
@@ -10,15 +8,15 @@
         <th>ISBN</th>
         <th>Editeur</th>
         <th>Date de parution</th>
-        <th>Genre</th>
+        <th>Style</th>
     </thead>
     <tr ng-repeat="items in results track by $index">
         <td class="smallThumbnail"><img src="{{items.smallThumbnail}}" alt="Pas d'image disponible"></td>
-        <td><a href="{{items.previewLink}}" id="previewlink">{{items.title}}</a></td>
+        <td>{{items.title}}</td>
         <td>{{items.author}}</td>
         <td>{{items.isbn}}</td>
         <td>{{items.publisher}}</td>
         <td>{{items.publisherDate}}</td>
-        <td>{{items.categories}}</td>
+        <td>{{items.Style}}</td>
     </tr>
 </table>

@@ -116,7 +116,7 @@ summary, .advancedsearch {
 .maxresult {
   margin-top: 10px;
 }
-.maxresult, span {
+.maxresult,span {
   text-align: left;
 }
 select {
@@ -262,13 +262,13 @@ input:focus:-ms-input-placeholder {
 main {
     flex-grow: 3;
     order: 3;
-    /*background-image: url('img/page.jpg');
-    background-size: cover;*/
+    background-image: url('img/page.jpg');
+    background-size: cover;
     background-color: #f4f4f4;
     opacity: .5;
 }
 
-main, footer {
+main,footer {
   margin-right: -20px;
 }
 
