@@ -213,9 +213,11 @@ button:hover {
     box-shadow: 0 1px 3px #00143a;
     text-decoration: none;
 }
-#table{
-  display: none;
+
+#table {
+    display: none;
 }
+
 button:focus {
     focus-ring-color auto 5px;
     -webkit-focus-ring-color auto 5px;

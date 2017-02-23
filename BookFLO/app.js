@@ -56,8 +56,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
             checkboxsum = 3
         } else if (checkboxsum < 3) {
             checkboxall.checked = false
-        }
-        else if (checkboxall.checked == true) {
+        } else if (checkboxall.checked == true) {
             checkboxsum = 3;
         }
     }
@@ -84,7 +83,6 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
             args += "+inpublisher:" + inputvalue;
         }
 
-
         let key = "&key=AIzaSyCsQR7F04zJVfUL4trC4XFh7tEwLwjt4DY" // google api key for monitoring
         let jsonurl = "https://www.googleapis.com/books/v1/volumes?q="; // url base
         let newarray = [];
@@ -96,7 +94,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
         formatedstring = newarray.join('%20'); //join all index values in a string and put a space char between them
 
-        jsonurl += formatedstring + args + maxresult + key;// url done
+        jsonurl += formatedstring + args + maxresult + key; // url done
 
         getjson(jsonurl); //sending the formatted url to the getjson function
 
@@ -156,7 +154,7 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
         }
 
-        document.getElementById("table").style.display = "block"; 
+        document.getElementById("table").style.display = "block";
         /*    drawtheresult(); not needed for now maybe in a future implementation  */
 
     };
