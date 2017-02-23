@@ -10,35 +10,34 @@
 
 <body ng-app="bookflo" ng-controller="Controller">
     <div class="container">
-
         <header>
             <h1>Book FLO</h1>
         </header>
         <main>
-          <details id="advancedsearch" value>
-            <summary>recherche avancée</summary>
-            <div class="advancedsearchdivcontainer">
-              <div id="searchby">
-                <p>recherche par :</p>
-                <strong>Titre:  <input id="titlecheckbox" name="titlecheckbox" type="checkbox"></input></strong>
-                <strong>Auteur:  <input name="authorcheckbox" type="checkbox"></input></strong>
-                <strong>Editeur:  <input name="publisher" type="checkbox"></input></strong>
-                <strong>tous:  <input name="checkboxall" type="checkbox"></input> </strong>
-              </div>
-              <div class="maxresult">
-                <p>Nombre maximum de résultats :</p>
-                <select id="maxresults">
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                  <option value="15">15</option>
-                  <option value="20">20</option>
-                  <option value="30">30</option>
-                  <option value="40">40</option>
-                </select>
-              </div>
-            </div>
-          </details>
             <form onsubmit="return false;" name="myform" class="" action="" method="get">
+              <details id="advancedsearch" value>
+                <summary>recherche avancée</summary>
+                <div class="advancedsearchdivcontainer">
+                  <div id="searchby">
+                    <p>recherche par :</p>
+                    <strong>Titre:  <input id="titlecheckbox" name="titlecheckbox" type="checkbox"></input></strong>
+                    <strong>Auteur:  <input name="authorcheckbox" type="checkbox"></input></strong>
+                    <strong>Editeur:  <input name="publisher" type="checkbox"></input></strong>
+                    <strong>tous:  <input name="checkboxall" type="checkbox"></input> </strong>
+                  </div>
+                  <div class="maxresult">
+                    <p>Nombre maximum de résultats :</p>
+                    <select id="maxresults">
+                      <option value="5">5</option>
+                      <option value="10">10</option>
+                      <option value="15">15</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="40">40</option>
+                    </select>
+                  </div>
+                </div>
+              </details>
 
 
                 <input id="search" type="search" placeholder="Mots-clés" name="name" value=""></input>
