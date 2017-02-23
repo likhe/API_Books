@@ -68,8 +68,8 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
 
 
     function urlmaker() {
-      inputvalue = document.getElementById("search").value;
-      console.log("inputvalue = ", inputvalue);
+        inputvalue = document.getElementById("search").value;
+        console.log("inputvalue = ", inputvalue);
         maxresultsinput = document.getElementById("maxresults").selectedIndex;
         maxresultsinputvalue = document.getElementsByTagName("option")[maxresultsinput].value
         resultnumbers = maxresultsinputvalue;
@@ -118,19 +118,19 @@ myApp.controller('Controller', ['$scope', '$http', "$q", function($scope, $http,
         }).then(function successCallback(response, data, status) {
             books = response.data.items;
             args = "";
-  /*        console.log("response = ", response);
-            console.log("data = ", response.data);
-            console.log("books = ", books);
-            console.log("books 0 = ", response.data.items[0]);
-            console.log("books 0 volume info = ", response.data.items[0].volumeInfo);
-            console.log("title = ", books[0].volumeInfo.title);
-            console.log("auteurs = ", books[0].volumeInfo.authors);
-            console.log("ISBN = ", books[0].volumeInfo.industryIdentifiers[0].identifier);
-            console.log("editeur = ", books[0].volumeInfo.publisher);
-            console.log("Date = ", books[0].volumeInfo.publishedDate);
-            console.log("smallThumbnail = ", books[0].volumeInfo.imageLinks.smallThumbnail);
-            console.log("previewLink = ", books[0].volumeInfo.previewLink);
-            console.log("categories = ", books[0].volumeInfo.categories[0]);*/
+            /*        console.log("response = ", response);
+                      console.log("data = ", response.data);
+                      console.log("books = ", books);
+                      console.log("books 0 = ", response.data.items[0]);
+                      console.log("books 0 volume info = ", response.data.items[0].volumeInfo);
+                      console.log("title = ", books[0].volumeInfo.title);
+                      console.log("auteurs = ", books[0].volumeInfo.authors);
+                      console.log("ISBN = ", books[0].volumeInfo.industryIdentifiers[0].identifier);
+                      console.log("editeur = ", books[0].volumeInfo.publisher);
+                      console.log("Date = ", books[0].volumeInfo.publishedDate);
+                      console.log("smallThumbnail = ", books[0].volumeInfo.imageLinks.smallThumbnail);
+                      console.log("previewLink = ", books[0].volumeInfo.previewLink);
+                      console.log("categories = ", books[0].volumeInfo.categories[0]);*/
             creatinglist();
         }, function errorCallback(response) {
             args = "";

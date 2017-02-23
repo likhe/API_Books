@@ -21,12 +21,17 @@ body {
     background-color: #0b0b0b;
     font-family: "Caviar Dreams";
 }
+
 .container {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    max-width: 100%;
 }
+
+
 /********le header**********/
+
 header {
     width: 50%;
     order: 1;
@@ -55,48 +60,57 @@ nav {
     padding: 30px;
     padding-left: 0;
     z-index: 3;
+    max-width: 100%;
 }
 
 form {
     position: relative;
     text-align: left;
+    width: 100%;
+    max-width: 100%;
 }
+
 
 /******summary and details***********/
 
 .advancedsearch {
-  text-align: left;
-  width: 250px;
-  height: 100px;
-  position: absolute;
-  top: 0;
-  right: 20px;
-  display: block;
+    text-align: left;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    display: block;
 }
+
 .advancedsearch>input:hover {
-  border: 1px solid #252526;
-  border-right: 3px solid #252526;
+    border: 1px solid #252526;
+    border-right: 3px solid #252526;
 }
 
 .advancedsearch>input:focus {
-  border: 1px solid transparent;
-  border-right: 3px solid transparent;
+    border: 1px solid transparent;
+    border-right: 3px solid transparent;
 }
+
 .searchby {
-  margin-top: -5em;
+    margin-top: -5em;
 }
+
 summary {
-  position: absolute;
-  width: 200px;
-  top: -7em;
-  right: 3em;
-  text-transform: capitalize;
+    position: absolute;
+    width: 200px;
+    top: -7em;
+    right: 3em;
+    text-transform: capitalize;
 }
+
 summary:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
+
 summary, .advancedsearch {
-  color: #f4f4f4;
+    color: #f4f4f4;
 }
 
 #authorcheckbox {
@@ -113,16 +127,20 @@ summary, .advancedsearch {
     width: 18px;
     height: 18px;
 }
+
 .maxresult {
-  margin-top: 10px;
+    margin-top: 10px;
 }
-.maxresult,span {
-  text-align: left;
+
+.maxresult, span {
+    text-align: left;
 }
+
 select {
-  text-align: center;
-  margin-left: 15px;
+    text-align: center;
+    margin-left: 15px;
 }
+
 option {
     background-color: #f4f4f4;
 }
@@ -268,9 +286,10 @@ main {
     opacity: .5;
 }
 
-main,footer {
-  margin-right: -20px;
+main, footer {
+    margin-right: -20px;
 }
+
 
 /**********footer*******************/
 
